@@ -1,0 +1,292 @@
+@use 'sass:color';
+@use 'sass:math';
+
+@use "../030-tools/tool_rem-conversion" as t-rem-px;
+
+// Overwrite global settings
+$custom-colors: (
+    "custom-color-1": #005176, // UzK-Blau rgba(0, 81, 118, 1)
+    "custom-color-2": #ea564f, // UzK-Coralle rgba(234, 86, 79, 1)
+    "custom-color-3": #009dcc, // UzK-Tuerkis rgba(0, 157, 204, 1)
+    "custom-color-4": #f0d551, // UzK-Gelb rgba(240, 213, 81, 1)
+    "custom-color-5": #6ea03c, // UzK-Gruen rgba(110, 160, 60, 1)
+    "custom-color-6": #0086c4, // UzK-Hellblau rgba(0, 134, 196, 1)
+    "custom-color-7": #f4e185, // UzK-Hellgelb rgba(244, 225, 133, 1)
+    "custom-color-8": #c4dfaa, // UzK-Hellgruen rgba(196, 223, 170, 1)
+    "custom-color-9": #d96c78, // UzK-Himbeer rgba(217, 108, 120, 1)
+    "custom-color-10": #a3e9ff, // UzK-Himmelblau rgba(163, 233, 255, 1)
+    "custom-color-11": #f5b2af, // UzK-Rose rgba(245, 178, 175, 1)
+    "custom-color-12": #cd3C4b, // UzK-Rot rgba(205, 60, 75, 1)
+    "custom-bg-primary": #ffffff,
+    "custom-bg-secondary": #ffffff,
+    "custom-bg-dark": #f9f9f9 // Grau-Weiss rgba(249, 249, 249, 1)
+);
+
+// Typography
+$il-web-font-path: "./fonts/";
+$il-font-family-sans-serif: 'Albert Sans', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+$il-headings-font-family: $il-font-family-sans-serif;
+$il-font-size-xsmall: 0.625rem;
+$il-font-size-small: 0.75rem;
+$il-font-size-base: 0.875rem;
+$il-font-size-large: 1rem;
+$il-font-size-xlarge: 1.115rem;
+$il-font-size-xxlarge: 1.5rem;
+$il-font-size-h1: 1.75rem;
+$il-line-height-base: 1.428571429;
+$il-line-height-computed: math.round(t-rem-px.rem-to-pixel($il-font-size-base) * $il-line-height-base);
+$il-small-line-height-computed: math.round(t-rem-px.rem-to-pixel($il-font-size-small) * $il-line-height-base);
+$il-line-height-large: 1.33;
+$il-headings-line-height: 1.33;
+$il-line-height-small: 1.5;
+$il-font-weight-light: 300;
+$il-font-weight-base: 400;
+$il-font-weight-bold: 600;
+$il-font-weight-xbold: 700;
+$il-headings-font-weight: 500;
+$il-link-decoration: none;
+$il-link-hover-decoration: underline;
+
+// Main colors
+$il-main-color: map-get($custom-colors, "custom-color-1");
+$il-secondary-color: map-get($custom-colors, "custom-color-2");
+$il-success-color: map-get($custom-colors, "custom-color-5");
+$il-info-color: map-get($custom-colors, "custom-color-3");
+$il-warning-color: map-get($custom-colors, "custom-color-2");
+$il-danger-color: #d00;
+$il-neutral-color: map-get($custom-colors, "custom-color-1");
+$il-text-muted: map-get($custom-colors, "custom-color-1");
+$il-neutral-light-color: #737373;
+$il-main-bg: #ffffff;
+$il-main-dark-bg: #f9f9f9;
+$il-main-darker-bg: #f0f0f0;
+$il-highlight-bg: lighten(map-get($custom-colors, "custom-color-2"), 30%);
+$il-text-color: #161616;
+$il-headings-color: inherit;
+$il-text-hover-color: darken($il-text-color, 10%);
+$il-text-light-color: lighten($il-text-color, 35%);
+$il-text-color-invert: $il-main-bg;
+$il-link-color: $il-main-color;
+$il-link-hover-color: darken($il-link-color, 10%);
+$il-focus-color: #0078d7;
+$il-focus-protection-color: #ffffff;
+
+// Borders
+$il-main-border-color: #dddddd;
+$il-main-border-dark-color: #757575;
+$il-main-border: 1px solid $il-main-border-color;
+$il-border-radius-base: 0px;
+$il-border-radius-large: 0px;
+$il-border-radius-small: 0px;
+$il-border-radius-secondary-base: 4px;
+$il-border-radius-secondary-large: 10px;
+$il-border-radius-secondary-small: 3px;
+
+// Buttons
+$il-button-font-size: $il-font-size-base;
+$il-button-font-weight: $il-font-weight-base;
+$il-btn-standard-color: #ffffff;
+$il-btn-standard-bg: $il-main-color;
+$il-btn-standard-border: $il-main-color;
+$il-btn-primary-color: #ffffff;
+$il-btn-primary-bg: darken(map-get($custom-colors, "custom-color-2"), 10%);
+$il-btn-primary-border: darken(map-get($custom-colors, "custom-color-2"), 10%);
+$il-engaged-btn-color: $il-text-color;
+$il-engaged-btn-bg: #ffffff;
+$il-btn-ctrl-color: $il-link-color;
+$il-btn-ctrl-bg: $il-highlight-bg;
+$il-btn-ctrl-border: $il-highlight-bg;
+$il-btn-ctrl-engaged-border: $il-link-color;
+$il-btn-ctrl-outer-height: 2.2rem;
+$il-btn-ctrl-inner-btn-height: 1.7rem;
+$il-disabled-btn-color: darken($il-text-color, 20%);
+$il-disabled-btn-bg: #b0b0b0;
+$il-disabled-btn-border: #b0b0b0;
+$il-btn-tag-bg: #75deea;
+$il-btn-tag-bg-highlighted: $il-warning-color;
+$il-bulky-text-color: $il-text-color;
+$il-bulky-bg-color: $il-main-darker-bg;
+$il-bulky-label-size: $il-font-size-base;
+$il-bulky-border-color: $il-main-darker-bg;
+$il-caret-width-base: 4px;
+$il-caret-width-large: 5px;
+$il-btn-border-radius-base: $il-border-radius-base;
+$il-btn-border-radius-large: $il-border-radius-large;
+$il-btn-border-radius-small: $il-border-radius-small;
+
+// Alert
+$il-alert-success-bg: color.scale($il-success-color, $lightness: 86%);
+$il-alert-success-color: $il-alert-success-bg;
+$il-alert-success-text: $il-text-color;
+$il-alert-info-bg: color.scale($il-info-color, $lightness: 86%);
+$il-alert-info-border: $il-alert-info-bg;
+$il-alert-info-text: $il-text-color;
+$il-alert-warning-bg: color.scale($il-warning-color, $lightness: 86%);
+$il-alert-warning-border: $il-alert-warning-bg;
+$il-alert-warning-text: $il-text-color;
+$il-alert-danger-bg: color.scale($il-danger-color, $lightness: 86%);
+$il-alert-danger-border: $il-alert-danger-bg;
+$il-alert-danger-text: $il-text-color;
+
+// Extended Colors
+$il-extended-color-1: #f3de2c;
+$il-extended-color-2: #d38000;
+$il-extended-color-3: #307C88;
+$il-extended-color-4: #86cb92;
+$il-extended-color-5: #ce73a8;
+$il-extended-color-6: #82639e;
+$il-extended-color-7: #9e7c7d;
+$il-extended-color-8: #f75e82;
+$il-extended-color-9: #ea4d54;
+$il-avatar-letter-color-variants: (
+    #0e6252,
+    #107360,
+    #896f06,
+    #a06608,
+    #176437,
+    #196f3d,
+    #b25e15,
+    #a04000,
+    #1d6fa5,
+    #1b557a,
+    #bf2718,
+    #81261d,
+    #713b87,
+    #522764,
+    #6A747C,
+    #34495e,
+    #2c3e50,
+    #566566,
+    #90175a,
+    #9e2b6e,
+    #d22f10,
+    #666d4e,
+    #715a32,
+    #83693a,
+    #963a30,
+    #de2f1b
+);
+
+// Shadows
+$il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
+
+@use "../uoc" as globals with (
+  
+  // --- Borders
+  $il-main-border-color: $il-main-border-color,
+  $il-main-border-dark-color: $il-main-border-dark-color,
+  $il-main-border: $il-main-border,
+  $il-border-radius-base: $il-border-radius-base,
+  $il-border-radius-large: $il-border-radius-large,
+  $il-border-radius-small: $il-border-radius-small,
+  $il-border-radius-secondary-base: $il-border-radius-secondary-base,
+  $il-border-radius-secondary-large: $il-border-radius-secondary-large,
+  $il-border-radius-secondary-small: $il-border-radius-secondary-small,
+  
+  // --- Buttons
+  $il-button-font-size: $il-button-font-size,
+  $il-button-font-weight: $il-button-font-weight,
+  $il-btn-standard-color: $il-btn-standard-color,
+  $il-btn-standard-bg: $il-btn-standard-bg,
+  $il-btn-standard-border: $il-btn-standard-border,
+  $il-btn-primary-color: $il-btn-primary-color,
+  $il-btn-primary-bg: $il-btn-primary-bg,
+  $il-btn-primary-border: $il-btn-primary-border,
+  $il-engaged-btn-color: $il-engaged-btn-color,
+  $il-engaged-btn-bg: $il-engaged-btn-bg,
+  $il-btn-ctrl-color: $il-btn-ctrl-color,
+  $il-btn-ctrl-bg: $il-btn-ctrl-bg,
+  $il-btn-ctrl-border: $il-btn-ctrl-border,
+  $il-btn-ctrl-engaged-border: $il-btn-ctrl-engaged-border,
+  $il-btn-ctrl-outer-height: $il-btn-ctrl-outer-height,
+  $il-btn-ctrl-inner-btn-height: $il-btn-ctrl-inner-btn-height,
+  $il-disabled-btn-color: $il-disabled-btn-color,
+  $il-disabled-btn-bg: $il-disabled-btn-bg,
+  $il-disabled-btn-border: $il-disabled-btn-border,
+  $il-btn-tag-bg: $il-btn-tag-bg,
+  $il-btn-tag-bg-highlighted: $il-btn-tag-bg-highlighted,
+  $il-bulky-text-color: $il-bulky-text-color,
+  $il-bulky-bg-color: $il-bulky-bg-color,
+  $il-bulky-label-size: $il-bulky-label-size,
+  $il-bulky-border-color: $il-bulky-border-color,
+  $il-caret-width-base: $il-caret-width-base,
+  $il-caret-width-large: $il-caret-width-large,
+  $il-btn-border-radius-base: $il-btn-border-radius-base,
+  $il-btn-border-radius-large: $il-btn-border-radius-large,
+  $il-btn-border-radius-small: $il-btn-border-radius-small,
+
+  // --- Main colors
+  $il-main-color: $il-main-color,
+  $il-secondary-color: $il-secondary-color,
+  $il-success-color: $il-success-color,
+  $il-info-color: $il-info-color,
+  $il-warning-color: $il-warning-color,
+  $il-danger-color: $il-danger-color,
+  $il-neutral-color: $il-neutral-color,
+  $il-text-muted: $il-text-muted,
+  $il-neutral-light-color: $il-neutral-light-color,
+  $il-main-bg: $il-main-bg,
+  $il-main-dark-bg: $il-main-dark-bg,
+  $il-main-darker-bg: $il-main-darker-bg,
+  $il-highlight-bg: $il-highlight-bg,
+  $il-text-color: $il-text-color,
+  $il-text-hover-color: $il-text-hover-color,
+  $il-text-light-color: $il-text-light-color,
+  $il-text-color-invert: $il-text-color-invert,
+  $il-link-color: $il-link-color,
+  $il-link-hover-color: $il-link-hover-color,
+  $il-focus-protection-color: $il-focus-protection-color,
+
+  // --- Alerts
+  $il-alert-success-bg: $il-alert-success-bg,
+  $il-alert-success-text: $il-alert-success-text,
+  $il-alert-info-bg: $il-alert-info-bg,
+  $il-alert-info-border: $il-alert-info-border,
+  $il-alert-info-text: $il-alert-info-text,
+  $il-alert-warning-bg: $il-alert-warning-bg,
+  $il-alert-warning-border: $il-alert-warning-border,
+  $il-alert-warning-text: $il-alert-warning-text,
+  $il-alert-danger-bg: $il-alert-danger-bg,
+  $il-alert-danger-border: $il-alert-danger-border,
+  $il-alert-danger-text: $il-alert-danger-text,
+
+  // --- Extended colors
+  $il-extended-color-1: $il-extended-color-1,
+  $il-extended-color-2: $il-extended-color-2,
+  $il-extended-color-3: $il-extended-color-3,
+  $il-extended-color-4: $il-extended-color-4,
+  $il-extended-color-5: $il-extended-color-5,
+  $il-extended-color-6: $il-extended-color-6,
+  $il-extended-color-7: $il-extended-color-7,
+  $il-extended-color-8: $il-extended-color-8,
+  $il-extended-color-9: $il-extended-color-9,
+  $il-avatar-letter-color-variants: $il-avatar-letter-color-variants,
+
+  // --- Shadows
+  $il-shadow--large: $il-shadow--large,
+
+  // --- Typography
+  $il-web-font-path: $il-web-font-path,
+  $il-font-family-sans-serif: $il-font-family-sans-serif,
+  $il-headings-font-family: $il-headings-font-family,
+  $il-font-size-xsmall: $il-font-size-xsmall,
+  $il-font-size-small: $il-font-size-small,
+  $il-font-size-base: $il-font-size-base,
+  $il-font-size-large: $il-font-size-large,
+  $il-font-size-xlarge: $il-font-size-xlarge,
+  $il-font-size-xxlarge: $il-font-size-xxlarge,
+  $il-font-size-h1: $il-font-size-h1,
+  $il-line-height-base: $il-line-height-base,
+  $il-line-height-computed: $il-line-height-computed,
+  $il-small-line-height-computed: $il-small-line-height-computed,
+  $il-line-height-large: $il-line-height-large,
+  $il-headings-line-height: $il-headings-line-height,
+  $il-line-height-small: $il-line-height-small,
+  $il-font-weight-light: $il-font-weight-light,
+  $il-font-weight-base: $il-font-weight-base,
+  $il-font-weight-bold: $il-font-weight-bold,
+  $il-font-weight-xbold: $il-font-weight-xbold,
+  $il-headings-font-weight: $il-headings-font-weight,
+  $il-link-decoration: $il-link-decoration,
+  $il-link-hover-decoration: $il-link-hover-decoration,
+);

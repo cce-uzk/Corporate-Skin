@@ -1,0 +1,142 @@
+/* Add font: Albert Sans */
+@font-face {
+font-family: 'Albert Sans';
+	src: url(fonts/AlbertSans/AlbertSans-Regular.ttf) format('truetype');
+}
+
+/* Custom: .panel, .ilContainerBlock with box shadow */
+.panel, 
+.ilContainerBlock {
+	/*box-shadow: 7px 5px 5px lightgray !important;*/
+	box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Custom: .panel-heading: Change background-color from grey to custom light blue */
+.panel .panel-heading.ilHeader,
+.panel .panel-heading.ilBlockHeader {
+	background-color: rgba(0, 81, 118, 0.03);
+}
+
+/* Custom: .panel header uzk blue */
+.panel .panel-heading.ilHeader h2, 
+.panel .panel-heading.ilHeader h2.ilHeader, 
+.panel .panel-heading.ilBlockHeader h2, 
+.panel .panel-heading.ilBlockHeader h2.ilHeader {
+	color: rgb(0, 81, 118);
+}
+
+/* Custom: text selection */
+::-moz-selection {
+	background: rgb(234, 86, 79);
+	color: white;
+}
+
+/* Custom: mainbar: Change background-color from grey to custom light blue */
+.btn-bulky, .il-link.link-bulky,
+.il-drilldown .menulevel {
+	background-color: rgba(0, 81, 118, 0.06);
+}
+
+/* Custom: mainbar tools: background color */
+.il-mainbar-tools-button .btn-bulky.engaged, 
+.il-mainbar-tools-entries-bg {
+	background-color: rgb(0,157,204);
+}
+
+/* Custom: mainbar tools: text color */
+.il-mainbar-tools-button .btn-bulky, 
+.il-mainbar-tools-button .btn-bulky.engaged {
+	color: white;
+}
+
+/* Custom: mainbar tools: icon color white */
+.il-mainbar-tools-button .btn-bulky.engaged .icon {
+	filter: brightness(0) invert(1);
+}
+
+/* Custom: mainbar icon size */
+.il-mainbar-triggers .btn-bulky .icon.small, 
+.il-mainbar-triggers .il-link.link-bulky .icon.small, 
+.il-mainbar-tools-button .btn-bulky .icon.small {
+	width: 35px;
+	height: 35px;
+}
+
+/* Custom: Set slate collapsed mainbar icon */
+.il-mainbar-triggers .btn-bulky.engaged .icon,
+.il-mainbar-triggers .il-link.link-bulky.engaged .icon {
+	filter: opacity(50%);
+}
+
+/* Custom: Set hovered or focus-visible mainbar elements icon color to initial value */
+.il-mainbar-triggers .btn-bulky:hover .icon,
+.il-mainbar-triggers .btn-bulky:focus-visible .icon,
+.il-mainbar-triggers .il-link.link-bulky:hover .icon,
+.il-mainbar-triggers .il-link.link-bulky:focus-visible .icon {
+	filter: initial;
+}
+
+/* Custom: Page title color */
+.il-pagetitle {
+	color: rgb(0, 81, 118);
+}
+
+/* Paged Layout Editor: Add borders around paragraph elements while page and text editing */
+#il_EditPage.copg-state-component
+div.il_editarea[data-cname="Paragraph"],
+#il_EditPage.copg-state-page
+div.il_editarea[data-cname="Paragraph"] {
+	border: 2px dotted #ddd;
+}
+
+/* Paged Layout Editor: Add borders around paragraph elements for not selected elements while multi selection */
+#il_EditPage.copg-state-multi
+div.il_editarea[data-cname="Paragraph"]:not(.il_editarea_selected) {
+	border: 2px dotted #ddd;
+}
+
+/* Page Layout Editor: Change border color of active page element */
+#il_EditPage div.il_editarea_selected, #il_EditPage div.copg-current-edit, iframe#tinytarget_ifr {
+	padding: 5px;
+	border: 2px solid rgb(0, 157, 204);
+}
+
+/* Page Layout Editor: Hide CCEInternal Custom Styles for non Adminstrators */
+.il-maincontrols-mainbar:not(:has(.adm)) li:has(.ilCOPgEditStyleSelectionItem div[class*="_CCEInternal"]) {
+    display: none;
+}
+
+/* Page Layout Editor: Font Style Menu (mobile optimized) */
+.il-maincontrols-slate-content .dropdown-menu {
+	max-height: 350px;
+}
+/* Page Layout Editor: Make Fonts Style Menus White Element visible on white background */
+button[data-copg-ed-par-format="White"] span {
+	text-shadow: 0 0 2px #000;
+}
+
+
+/* Custom Style Element: CCEInternalImageCardContainer Image Copyright Notice */
+.ilc_section_CCEInternalImageCardContainer figcaption {
+	color: #FFFFFF;
+	line-height: 1rem;
+	white-space: nowrap;
+	padding-left: 10px;
+	background-color: #00000033;
+	position: absolute;
+	width: 100%;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform-origin: top left;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-ms-transform-origin: top left;
+	pointer-events: none;
+}
+.ilc_section_CCEInternalImageCardContainer figcaption .ilc_media_caption_MediaCaption {
+	background-color: unset;
+	font-size: 0.85rem;
+	font-weight: normal;
+}
