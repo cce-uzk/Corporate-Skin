@@ -106,7 +106,7 @@ cd uoc
 
 # 2) Check out the branch matching your ILIAS version
 # Example for ILIAS 9:
-git checkout style/release_9-uzk
+git checkout release_9-uzk
 
 # 3) (Optional) make the webserver own the files
 #    adjust user:group as needed
@@ -126,6 +126,6 @@ git pull --ff-only
 # switch the skin folder to a different branch
 cd <ILIAS_ROOT>/Customizing/global/skin/uoc
 git fetch --all --tags
-git checkout style/release_10-uzk   # example
+git checkout release_10-uzk   # example
 git pull --ff-only
 ```
