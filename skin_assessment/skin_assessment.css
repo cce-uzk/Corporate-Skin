@@ -19450,4 +19450,21 @@ button[data-copg-ed-par-format=White] span {
   font-weight: normal;
 }
 
+/* PATCH START: Scratch answer */
+.mcOptionExcluded, .mcOptionExcluded > div:first-child, .mcOptionExcluded > span:first-child {
+  text-decoration: line-through;
+}
+
+.mcExclusionToggle {
+  margin-left: 20px;
+}
+
+.mcExclusionToggleInverted {
+  background-color: #ffffff !important;
+  border: solid #708bae 1px !important;
+  color: #708bae !important;
+}
+
+/* PATCH END: Scratch answer */
+
 /*# sourceMappingURL=skin_assessment.css.map */

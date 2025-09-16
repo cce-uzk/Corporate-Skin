@@ -290,3 +290,6 @@ $il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
   $il-link-decoration: $il-link-decoration,
   $il-link-hover-decoration: $il-link-hover-decoration,
 );
+
+// ## Custom styles 
+@use "./custom.scss" as *;
