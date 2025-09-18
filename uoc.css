@@ -19450,4 +19450,10 @@ button[data-copg-ed-par-format=White] span {
   font-weight: normal;
 }
 
+/* Position alert elements above others */
+.alert {
+  position: inherit;
+  z-index: 1;
+}
+
 /*# sourceMappingURL=uoc.css.map */
