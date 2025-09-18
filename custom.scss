@@ -140,3 +140,9 @@ button[data-copg-ed-par-format="White"] span {
 	font-size: 0.85rem;
 	font-weight: normal;
 }
+
+/* Position alert elements above others */
+.alert {
+	position: inherit;
+	z-index: 1;
+}

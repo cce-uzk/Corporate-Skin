@@ -19450,6 +19450,12 @@ button[data-copg-ed-par-format=White] span {
   font-weight: normal;
 }
 
+/* Position alert elements above others */
+.alert {
+  position: inherit;
+  z-index: 1;
+}
+
 /* PATCH START: Scratch answer */
 .mcOptionExcluded, .mcOptionExcluded > div:first-child, .mcOptionExcluded > span:first-child {
   text-decoration: line-through;
