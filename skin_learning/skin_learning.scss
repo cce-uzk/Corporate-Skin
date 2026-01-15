@@ -170,8 +170,7 @@ $il-avatar-letter-color-variants: (
 // Shadows
 $il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
 
-@use "../uoc" as globals with (
-  
+@use "../uoc" as globals with (  
   // --- Borders
   $il-main-border-color: $il-main-border-color,
   $il-main-border-dark-color: $il-main-border-dark-color,
@@ -289,4 +288,5 @@ $il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
   $il-headings-font-weight: $il-headings-font-weight,
   $il-link-decoration: $il-link-decoration,
   $il-link-hover-decoration: $il-link-hover-decoration,
+  //$il-background-images-path: "../images/",
 );

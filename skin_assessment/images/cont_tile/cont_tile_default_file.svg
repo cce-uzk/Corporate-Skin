@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 21.3" style="enable-background:new 0 0 32 21.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#CCFBFF;}
+	.st2{fill:#CEFCFF;}
+	.st3{fill:#CBFAFF;}
+	.st4{fill:#C4F7FF;}
+	.st5{fill:#C1F6FF;}
+	.st6{fill:#C2F6FF;}
+	.st7{fill:#C6F8FF;}
+	.st8{fill:#AAE9FF;}
+	.st9{fill:#B4EFFF;}
+	.st10{fill:#BEF5FF;}
+	.st11{fill:#C0F6FF;}
+	.st12{fill:#BBF4FF;}
+	.st13{fill:#B8F2FF;}
+	.st14{fill:#BFF6FF;}
+	.st15{fill:#BCF4FF;}
+	.st16{fill:#A3E9FF;}
+	.st17{fill:#A7EBFF;}
+	.st18{fill:#B5F0FF;}
+	.st19{fill:#B6F1FF;}
+	.st20{fill:#B3EEFF;}
+	.st21{fill:#ABECFF;}
+	.st22{fill:#B7F1FF;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="10.6498" x2="32" y2="10.6498">
+	<stop  offset="1.962293e-07" style="stop-color:#CEFCFF"/>
+	<stop  offset="1" style="stop-color:#A3E9FF"/>
+</linearGradient>
+<rect class="st0" width="32" height="21.3"/>
+<g>
+	<polyline class="st1" points="0,7.1 8,7.1 8,0 	"/>
+	<polyline class="st2" points="8,0 0,0 0,7.1 	"/>
+	<polyline class="st3" points="8,7.1 16,7.1 16,0 	"/>
+	<polyline class="st4" points="16,0 8,0 8,7.1 	"/>
+	<polyline class="st5" points="16,0 16,7.1 24,7.1 	"/>
+	<polyline class="st6" points="24,7.1 24,0 16,0 	"/>
+	<polyline class="st7" points="0,14.2 8,14.2 8,7.1 	"/>
+	<polyline class="st1" points="8,7.1 0,7.1 0,14.2 	"/>
+	<polyline class="st8" points="24,14.2 32,14.2 32,7.1 	"/>
+	<polyline class="st9" points="32,7.1 24,7.1 24,14.2 	"/>
+	<polyline class="st10" points="8,7.1 16,7.1 16,14.2 	"/>
+	<polyline class="st11" points="16,14.2 8,14.2 8,7.1 	"/>
+	<polyline class="st12" points="16,7.1 24,7.1 24,14.2 	"/>
+	<polyline class="st13" points="24,14.2 16,14.2 16,7.1 	"/>
+	<polyline class="st14" points="0,14.2 8,14.2 8,21.3 	"/>
+	<polyline class="st15" points="8,21.3 0,21.3 0,14.2 	"/>
+	<polyline class="st16" points="24,21.3 32,21.3 32,14.2 	"/>
+	<polyline class="st17" points="32,14.2 24,14.2 24,21.3 	"/>
+	<polyline class="st18" points="8,21.3 8,14.2 16,14.2 	"/>
+	<polyline class="st19" points="16,14.2 16,21.3 8,21.3 	"/>
+	<polyline class="st20" points="16,21.3 16,14.2 24,14.2 	"/>
+	<polyline class="st21" points="24,14.2 24,21.3 16,21.3 	"/>
+	<polyline class="st22" points="32,7.1 32,0 24,0 	"/>
+	<polyline class="st18" points="24,0 24,7.1 32,7.1 	"/>
+</g>
+</svg>
