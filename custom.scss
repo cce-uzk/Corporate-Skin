@@ -1,7 +1,10 @@
 /* Add font: Albert Sans */
+@use "./010-settings/" as *;
 @font-face {
-font-family: 'Albert Sans';
-	src: url(fonts/AlbertSans/AlbertSans-Regular.ttf) format('truetype');
+	font-family: 'Albert Sans';
+	src: url('#{$il-web-font-path}AlbertSans/AlbertSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 /* Custom: .panel, .ilContainerBlock with box shadow */

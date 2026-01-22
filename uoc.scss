@@ -1,7 +1,12 @@
 // # ITCSS structure
 // All style code MUST be split into these layers
 
-// The first two layers expose public variables with @forward so they can be overwritten in a skin
+// The first two layers expose public variables with @forward so they can be overwritten in a subskin
+// includes all other specific layout files and folder with @use in component when needed
+
+// Relative paths differences:
+// SCSS paths are relativ to the SCSS file
+// CSS paths (linked fonts) are relative to the compiled template CSS
 
 // ## Settings
 @forward "./010-settings/";
@@ -10,14 +15,13 @@
 @forward "./020-dependencies/";
 
 // ## Tools
-// include patterns and tools with @use in component when needed
+// include patterns and tools with @use when needed
 
 // ## Normalize
 @use "./040-normalize/" as *;
 
 // ## Layout
-@use "./050-layout/" as *; // these are only Layout Utilities that require to write CSS code like the grid
-// include all other specific layout files and folder with @use in component when needed
+@use "./050-layout/" as *;
 
 // ## Elements
 @use "./060-elements" as *;
@@ -28,9 +32,5 @@
 // ## Hacks
 @use "./080-hacks" as *;
 
-// # Relative paths differences
-// SCSS paths are relativ to the SCSS file
-// CSS paths (linked fonts) are relative to the compiled template CSS
-
-// ## Custom styles 
+// ## Global Custom styles 
 @use "./custom.scss" as *;

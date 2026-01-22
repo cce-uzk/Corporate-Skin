@@ -23,7 +23,6 @@ $custom-colors: (
 );
 
 // Typography
-$il-web-font-path: "./fonts/";
 $il-font-family-sans-serif: 'Albert Sans', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
 $il-headings-font-family: $il-font-family-sans-serif;
 $il-font-size-xsmall: 0.625rem;
@@ -266,7 +265,6 @@ $il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
   $il-shadow--large: $il-shadow--large,
 
   // --- Typography
-  $il-web-font-path: $il-web-font-path,
   $il-font-family-sans-serif: $il-font-family-sans-serif,
   $il-headings-font-family: $il-headings-font-family,
   $il-font-size-xsmall: $il-font-size-xsmall,
@@ -289,5 +287,10 @@ $il-shadow--large: 20px 10px 30px rgba(0, 0, 0, .15);
   $il-headings-font-weight: $il-headings-font-weight,
   $il-link-decoration: $il-link-decoration,
   $il-link-hover-decoration: $il-link-hover-decoration,
-  //$il-background-images-path: "../images/",
+  $il-background-images-path: "../images/",
+  $il-web-font-path: "../fonts/",
+  $il-icon-font-path: "../fonts/bootstrap/"
 );
+
+// --- Custom styles 
+@use "./custom.scss" as *;
