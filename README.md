@@ -4,6 +4,20 @@ This document explains how to set up a **private style repository for ILIAS** ba
 
 ---
 
+## Branch Overview
+
+Each branch of this repository corresponds to one ILIAS major version:
+
+| Branch | ILIAS version |
+|---|---|
+| `release_9-uzk` | ILIAS 9 |
+| `release_10-uzk` | ILIAS 10 |
+| `release_11-uzk` | ILIAS 11 |
+
+**You are currently on `release_11-uzk` (ILIAS 11).**
+
+---
+
 ## A. Code Versioning
 
 We maintain a **private repository** that tracks the public Delos repo as an **upstream remote**.
@@ -22,8 +36,8 @@ git remote add upstream https://github.com/ILIAS-eLearning/delos.git
 git fetch upstream
 
 # 3) Create a clean base branch (no local changes here!)
-git switch -c release_9-uzk --track upstream/release_9
-git push -u origin release_9-uzk
+git switch -c release_11-uzk --track upstream/release_11
+git push -u origin release_11-uzk
 ```
 
 ### Updating with changes from Delos
@@ -32,8 +46,8 @@ Use `git merge` (not `git rebase`) — our branch contains merge commits that ma
 
 ```bash
 git fetch upstream
-git switch release_9-uzk
-git merge upstream/release_9
+git switch release_11-uzk
+git merge upstream/release_11
 ```
 
 **Resolving conflicts:**
@@ -119,8 +133,8 @@ Each ILIAS major version gets its own branch, tracking the corresponding upstrea
 
 ```bash
 git fetch upstream
-git switch -c release_10-uzk --track upstream/release_10
-git push -u origin release_10-uzk
+git switch -c release_12-uzk --track upstream/release_12
+git push -u origin release_12-uzk
 ```
 
 **Note:** The Delos SCSS structure may change between major versions and require manual adaptation before the skin compiles correctly. As of ILIAS 10, the delos SCSS files moved into a `delos/` subdirectory. This means import paths in `uoc.scss` and the sub-skin `@use "../uoc"` references must be reviewed and updated when setting up a new version branch.
@@ -143,9 +157,8 @@ cd <ILIAS_ROOT>/Customizing/global/skin/
 git clone https://github.com/cce-uzk/Corporate-Skin.git uoc
 cd uoc
 
-# 2) Check out the branch matching your ILIAS version
-# Example for ILIAS 9:
-git checkout release_9-uzk
+# 2) Check out the branch matching your ILIAS version (see Branch Overview above)
+git checkout release_11-uzk
 
 # 3) (Optional) make the webserver own the files
 #    adjust user:group as needed
@@ -159,12 +172,11 @@ cd <ILIAS_ROOT>/Customizing/global/skin/uoc
 git pull --ff-only
 ```
 
-### Switching ILIAS versions later
+## Switching ILIAS versions later
 
 ```bash
-# switch the skin folder to a different branch
 cd <ILIAS_ROOT>/Customizing/global/skin/uoc
-git fetch --all --tags
-git checkout release_10-uzk   # example
+git fetch --all
+git checkout release_12-uzk   # replace with the branch for your new ILIAS version
 git pull --ff-only
 ```
