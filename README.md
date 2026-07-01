@@ -17,7 +17,7 @@ cd C:\Users\####\git
 git clone https://github.com/cce-uzk/Corporate-Skin.git
 cd Corporate-Skin
 
-# 2) Add the public Delos repository as upstream
+# 2) Add the public Delos repository as upstream (HTTPS, no auth required)
 git remote add upstream https://github.com/ILIAS-eLearning/delos.git
 git fetch upstream
 
@@ -28,10 +28,37 @@ git push -u origin release_9-uzk
 
 ### Updating with changes from Delos
 
+Use `git merge` (not `git rebase`) — our branch contains merge commits that make rebase error-prone.
+
 ```bash
 git fetch upstream
 git switch release_9-uzk
-git rebase upstream/release_9   # alternatively: git merge upstream/release_9
+git merge upstream/release_9
+```
+
+**Resolving conflicts:**
+
+Template files we intentionally removed from our skin may cause `modify/delete` conflicts if upstream updated them. Keep our deletion:
+
+```bash
+git rm <conflicted-file>
+```
+
+Template files added by upstream that we do not want to override should also be removed before committing:
+
+```bash
+git rm <unwanted-upstream-template>
+```
+
+After resolving all conflicts, complete the merge:
+
+```bash
+git commit
+```
+
+Then recompile the skins (see Section B) and push:
+
+```bash
 git push
 ```
 
@@ -72,21 +99,19 @@ Example: a corporate skin with ID `uoc` and three sub-skins (`skin_learning`, `s
 
 * For the **main skin** (`uoc`), create a SCSS file `uoc.scss` based on `delos.scss`.
 * For each **sub-skin**, create a directory named after the `id` (e.g., `skin_learning/`) and place a corresponding SCSS file inside (e.g., `skin_learning.scss`).
+* Sub-skins import from `uoc.scss` via `@use "../uoc"` and override variables as needed.
 
 ### Compilation
 
 Compile SCSS to CSS using [Sass](https://sass-lang.com/).
-Every skin and sub-skin must be recompiled after changes:
+All commands are run from the **repository root**. Compile the main skin first, then the sub-skins:
 
 ```bash
-sass skin_learning.scss skin_learning.css
-sass skin_assessment.scss skin_assessment.css
-sass skin_edulabs.scss skin_edulabs.css
+sass uoc.scss uoc.css --no-source-map
+sass skin_learning/skin_learning.scss skin_learning/skin_learning.css --no-source-map
+sass skin_assessment/skin_assessment.scss skin_assessment/skin_assessment.css --no-source-map
+sass skin_edulabs/skin_edulabs.scss skin_edulabs/skin_edulabs.css --no-source-map
 ```
-
----
-
-Perfect — that makes things simple. Here’s a tight README section you can copy-paste. It assumes the **repo root is exactly the skin** (i.e., `template.xml`, `skin_*.css`, `images/`, … are at the top level).
 
 ---
 
