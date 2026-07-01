@@ -113,6 +113,20 @@ sass skin_assessment/skin_assessment.scss skin_assessment/skin_assessment.css --
 sass skin_edulabs/skin_edulabs.scss skin_edulabs/skin_edulabs.css --no-source-map
 ```
 
+### Migrating to a new ILIAS major version
+
+Each ILIAS major version gets its own branch, tracking the corresponding upstream branch:
+
+```bash
+git fetch upstream
+git switch -c release_10-uzk --track upstream/release_10
+git push -u origin release_10-uzk
+```
+
+**Note:** The Delos SCSS structure may change between major versions and require manual adaptation before the skin compiles correctly. As of ILIAS 10, the delos SCSS files moved into a `delos/` subdirectory. This means import paths in `uoc.scss` and the sub-skin `@use "../uoc"` references must be reviewed and updated when setting up a new version branch.
+
+Once adapted, the regular update workflow (fetch → merge → recompile → push) applies identically to the new branch.
+
 ---
 
 # Deploying `uoc` to ILIAS
