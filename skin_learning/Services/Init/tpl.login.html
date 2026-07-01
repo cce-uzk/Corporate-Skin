@@ -1,0 +1,157 @@
+<style>
+  .il-layout-page {
+	background-image: url(./Customizing/global/skin/uoc/skin_learning/images/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .il-layout-page-content {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .il-standard-form[name="login_form"] .il-section-input .control-label {
+    min-width: 150px;
+  }
+  
+  .ilc_section_CCEInternalBlock0010 {
+    align-content: center;
+    height: 100vh;
+  }
+  
+  div:has(> div.ilc_section_CCEInternalBlock0020) {
+    background-color: white;
+    height: auto;
+    min-height: 100vh;
+    /*margin-right: calc(var(--bs-gutter-x) * 0.5 * -1);*/
+    /*margin-left: calc(var(--bs-gutter-x) * 0.5 * -1);*/
+    margin-bottom: -60px;
+    margin-top: -90px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-bottom: 50px;
+    padding-top: 70px;
+  }
+  
+  .ilc_section_CCEInternalBlock0010 .ilc_heading1_Headline1 {
+    margin-bottom: 15px;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 5.75rem;
+    font-weight: 900;
+    font-variant: small-caps;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  .ilc_section_CCEInternalBlock0010 .ilc_heading2_Headline2 {
+    margin: 0px !important;
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: white;
+    font-variant: small-caps;
+  }
+  
+  .bgImageCopyrightArea {
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    color: white;
+    white-space: nowrap;
+    pointer-events: none;
+    width: fit-content;
+    line-height: 1;
+    margin-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+  
+  .bgImageCopyrightArea p {
+    transform: rotate(180deg);
+    font-size: 0.85rem;
+  }
+  
+  @media only screen and (max-width: 991px) {
+    .ilc_section_CCEInternalBlock0010 {
+      align-content: center;
+      height: 100%;
+      display: none;
+    }
+    
+    .ilc_section_CCEInternalBlock0010 .ilc_heading1_Headline1 {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      font-size: 2.75rem;
+      font-weight: 900;
+      font-variant: small-caps;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+      color: rgb(0, 81, 118);
+    }
+    
+    .ilc_section_CCEInternalBlock0010 .ilc_heading2_Headline2 {
+      margin: 0px !important;
+      font-size: 1.0rem;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .il-layout-page {
+      background-image: unset;
+    }
+    
+    .il-layout-page-content {
+      background-color: unset;
+    }
+    
+    .bgImageCopyrightArea {
+      display: none;
+    }
+  }
+  
+  .ilAdminRow {
+    position: relative;
+  }
+</style>
+
+<!-- BEGIN login_information -->
+<div class="small">{TXT_LOGIN_INFORMATION}</div>
+<!-- END login_information -->
+
+<div class="ilCustomLoginPage">
+  <div class="bgImageCopyrightArea">
+    <p>&#169; Ludolf Dahmen</p>    
+  </div>
+	<!-- BEGIN login_page_editor -->
+	{LPE}
+	<!-- END login_page_editor -->
+</div>
+<div class="ilStartupSection">
+	<!-- BEGIN shib_login_form -->
+	<p>
+		{SHIB_LOGIN_FORM}
+	</p>
+	<!-- END shib_login_form -->
+	<!-- BEGIN saml_login -->
+	{SAML_LOGIN_FORM}
+	<!-- END saml_login -->
+	<!-- BEGIN cas_login -->
+	<p>
+		{CAS_LOGIN_FORM}
+	</p>
+	<!-- END cas_login -->
+	<!-- BEGIN oidc_login -->
+	{OPEN_ID_CONNECT_LOGIN_FORM}
+	<!-- END oidc_login -->
+	<!-- BEGIN ilias_login -->
+	{LOGIN_FORM}
+	<!-- END ilias_login -->
+	<!-- BEGIN reg_links -->
+	<div class="ilStartupSection">
+		{REG_PWD_CLIENT_LINKS}
+	</div>
+	<!-- END reg_links -->
+	<!-- BEGIN agreement -->
+	<div class="ilStartupSection">
+		{USER_AGREEMENT}
+		{DPRO_AGREEMENT}
+	</div>
+	<!-- END agreement -->
+</div>
