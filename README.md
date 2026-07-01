@@ -137,7 +137,9 @@ git switch -c release_11-uzk --track upstream/release_11
 git push -u origin release_11-uzk
 ```
 
-**Note:** The Delos SCSS structure may change between major versions and require manual adaptation before the skin compiles correctly. As of ILIAS 10, the delos SCSS files moved into a `delos/` subdirectory. This means import paths in `uoc.scss` and the sub-skin `@use "../uoc"` references must be reviewed and updated when setting up a new version branch.
+**Note:** Between ILIAS 9 and 10 two structural changes require adaptation when setting up a new version branch:
+- The Delos SCSS files moved into a `delos/` subdirectory — import paths in `uoc.scss`, `custom.scss`, and sub-skin files must be updated accordingly.
+- Skin template overrides moved from `Services/Init/` to `components/ILIAS/Init/`, and the skin deployment path changed from `Customizing/global/skin/` to `public/Customizing/skin/` — background image URLs in login templates must be updated accordingly.
 
 Once adapted, the regular update workflow (fetch → merge → recompile → push) applies identically to the new branch.
 
@@ -145,13 +147,15 @@ Once adapted, the regular update workflow (fetch → merge → recompile → pus
 
 # Deploying `uoc` to ILIAS
 
+**Note:** As of ILIAS 10, skins are deployed under `public/Customizing/skin/` instead of `Customizing/global/skin/`.
+
 ## First deployment (clone once)
 
 ```bash
 # 0) Optional: use SSH + a read-only deploy key for private repos
 # git@github.com:cce-uzk/Corporate-Skin.git
 
-cd <ILIAS_ROOT>/Customizing/global/skin/
+cd <ILIAS_ROOT>/public/Customizing/skin/
 
 # 1) Clone into expected skin id folder name
 git clone https://github.com/cce-uzk/Corporate-Skin.git uoc
@@ -168,14 +172,14 @@ chown -R www-data:www-data .
 ## Maintenance (pull latest changes)
 
 ```bash
-cd <ILIAS_ROOT>/Customizing/global/skin/uoc
+cd <ILIAS_ROOT>/public/Customizing/skin/uoc
 git pull --ff-only
 ```
 
 ## Switching ILIAS versions later
 
 ```bash
-cd <ILIAS_ROOT>/Customizing/global/skin/uoc
+cd <ILIAS_ROOT>/public/Customizing/skin/uoc
 git fetch --all
 git checkout release_11-uzk   # replace with the branch for your new ILIAS version
 git pull --ff-only
