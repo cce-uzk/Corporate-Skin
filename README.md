@@ -4,6 +4,20 @@ This document explains how to set up a **private style repository for ILIAS** ba
 
 ---
 
+## Branch Overview
+
+Each branch of this repository corresponds to one ILIAS major version:
+
+| Branch | ILIAS version |
+|---|---|
+| `release_9-uzk` | ILIAS 9 |
+| `release_10-uzk` | ILIAS 10 |
+| `release_11-uzk` | ILIAS 11 |
+
+**You are currently on `release_9-uzk` (ILIAS 9).**
+
+---
+
 ## A. Code Versioning
 
 We maintain a **private repository** that tracks the public Delos repo as an **upstream remote**.
@@ -143,8 +157,7 @@ cd <ILIAS_ROOT>/Customizing/global/skin/
 git clone https://github.com/cce-uzk/Corporate-Skin.git uoc
 cd uoc
 
-# 2) Check out the branch matching your ILIAS version
-# Example for ILIAS 9:
+# 2) Check out the branch matching your ILIAS version (see Branch Overview above)
 git checkout release_9-uzk
 
 # 3) (Optional) make the webserver own the files
@@ -159,12 +172,11 @@ cd <ILIAS_ROOT>/Customizing/global/skin/uoc
 git pull --ff-only
 ```
 
-### Switching ILIAS versions later
+## Switching ILIAS versions later
 
 ```bash
-# switch the skin folder to a different branch
 cd <ILIAS_ROOT>/Customizing/global/skin/uoc
-git fetch --all --tags
-git checkout release_10-uzk   # example
+git fetch --all
+git checkout release_10-uzk   # replace with the branch for your new ILIAS version
 git pull --ff-only
 ```
