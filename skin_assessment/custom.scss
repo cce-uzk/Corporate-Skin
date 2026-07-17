@@ -13,3 +13,44 @@
     color: #708bae !important;
 }
 /* PATCH END: Scratch answer */
+
+/* PATCH START: Anti-cheat */
+/* companion behaviour: skin_assessment/js/anticheat.js */
+#tst_output.tst-with-prevent-txt-selection .ilc_page_title_PageTitle,
+#tst_output.tst-with-prevent-txt-selection .ilc_qtitle_Title,
+#tst_output.tst-with-prevent-txt-selection .answertext,
+#tst_output.tst-with-prevent-txt-selection .ilc_qinput_TextInput,
+#tst_output.tst-with-prevent-txt-selection .ilc_qanswer_Answer,
+#tst_output.tst-with-prevent-txt-selection .ilAdditionalAssQuestionInstruction,
+#tst_output.tst-with-prevent-txt-selection .ilc_question_Standard > .ilc_qtitle_Title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* transparent so the watermark background set by anticheat.js remains visible */
+#tst_output.tst-with-watermark #tst_right .ilc_Page {
+    background-color: transparent;
+    padding: 0;
+}
+
+@media print {
+    #tst_output.tst-with-watermark {
+        /* invalid on purpose: overrides the inherited print background-image rule */
+        background-image: invalid !important;
+    }
+    #tst_output.tst-with-watermark:before {
+        content: attr(data-watermark);
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        z-index: 1;
+        width: 200%;
+        color: black;
+        font-size: 30px;
+        opacity: 0.1;
+    }
+}
+/* PATCH END: Anti-cheat */
